@@ -2,13 +2,12 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) {|repo_name| "https://github.com/#{GIFT-course-keeper}" }
 
-# gem "rails"
-Gem ‘sinatra’
-Gem ‘sqlite3’
-Gem ‘activerecord’, :require => “active_record”
-Gem ‘rake’
-Gem ‘pry’
-Gem ‘sinatra-activerecord’
-Gem ‘require_all’
+gem "rails"
+gem ‘sqlite3’
+gem ‘activerecord’, :require => “active_record”
+gem ‘rake’
+gem ‘pry’
+gem ‘sinatra-activerecord’
+gem ‘require_all’
