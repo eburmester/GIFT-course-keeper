@@ -8,11 +8,13 @@ class ApplicationController < ActiveRecord::Base
 		end
 		
 		get '/' do
-			if is_logged_in?
-			  redirect to '/courses'
-			end
-			erb :index
-		  end
+			
+			"Hello World!"
+			# if is_logged_in?
+			#   redirect to '/courses'
+			# end
+			# erb :index
+		 end
 
 		helpers do
 			def is_logged_in?
