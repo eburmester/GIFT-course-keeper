@@ -9,13 +9,13 @@ gem 'require_all'
 gem 'activerecord', '4.2.5'
 gem 'sinatra-activerecord'
 gem 'bundler'
- 
+gem 'rake'
+gem 'sqlite3', '<1.4'
 
 group :development do
 	gem 'shotgun'
 	gem 'pry'
 	gem 'tux'
-  gem 'sqlite3'
 end
     
 group :test do
