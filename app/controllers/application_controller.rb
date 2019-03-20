@@ -1,10 +1,10 @@
-class ApplicationController < ActiveRecord::Base
+class ApplicationController < Sinatra::Base
 	
-		Configure do 
-			Set :public_folder, ‘public’
-			Set :views, ‘app/views’
-			Enable :sessions
-				Set :session_secret, “GIFTcoursecollection”
+		configure do	
+			set :public_folder, 'public'
+			set :views, 'app/views'
+			enable :sessions
+				set :session_secret, "GIFTcoursecollection"
 		end
 		
 		get '/' do
