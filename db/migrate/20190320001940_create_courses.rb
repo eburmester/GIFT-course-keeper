@@ -4,7 +4,4 @@ class CreateCourses < ActiveRecord::Migration
       t.string :course_name
     end
   end
-
- 
-
 end

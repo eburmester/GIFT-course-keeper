@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
 			#   flash[:account_taken] = "The email you provided is already in our system. Please enter a new email or log in to continue."
 			#   redirect to '/signup'
 			# end
-				binding.pry
+				
 			new_user = User.create(user_info)
 			session[:user_id] = new_user.id
 	
