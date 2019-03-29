@@ -17,9 +17,10 @@ GEM
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     arel (6.0.4)
+    bcrypt (3.1.12)
     bond (0.5.1)
     builder (3.2.3)
-    capybara (3.15.0)
+    capybara (3.16.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -40,7 +41,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     mustermann (1.0.3)
-    nokogiri (1.10.1)
+    nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -107,6 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (= 4.2.5)
+  bcrypt
   bundler
   capybara
   pry

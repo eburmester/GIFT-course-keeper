@@ -11,6 +11,7 @@ gem 'sinatra-activerecord'
 gem 'bundler'
 gem 'rake'
 gem 'sqlite3', '<1.4'
+gem 'bcrypt'
 
 group :development do
 	gem 'shotgun'

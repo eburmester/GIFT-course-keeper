@@ -7,10 +7,10 @@ class ApplicationController < Sinatra::Base
 				set :session_secret, "GIFTcoursecollection"
 		end
 		
-		get "/homepage" do
-			#"Hello"
+		get "/" do
 			erb :homepage
 		end
+
 
 		helpers do
 			def is_logged_in?
