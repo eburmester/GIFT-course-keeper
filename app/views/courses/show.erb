@@ -1,0 +1,7 @@
+<p>From Your Course List</p>
+    <a class="btn btn-info btn-sm" href="/courses/<%= @experience.id %>/edit" role="button">Edit Course</a>
+    <br>
+<form method="POST" action="/courses/<%= @course.id %>/delete">
+     <input id="hidden" type="hidden" name="_method" value="delete">
+        <button type="submit" class="btn btn-danger btn-sm">Delete Course</button>
+</form>

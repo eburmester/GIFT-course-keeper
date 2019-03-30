@@ -1,0 +1,10 @@
+<h1 class="display-3">All of your GIFT Courses: </h1>
+<div class="row">
+  <% @courses.each do |course| %>
+    <div class="card" style="width: 15rem; margin: 20px">
+      <div class="text-center">
+        <div class="card-header"><a href="/courses/<%= course.id %>"><%= course.name %></a></div>
+      </div>
+    </div>
+  <% end %>
+</div>
