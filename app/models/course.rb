@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-    belong_to :users
+    belongs_to :users
     has_many :users, through: :user_courses 
 
     def self.update_course(details)

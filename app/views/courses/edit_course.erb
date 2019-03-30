@@ -1,9 +1,9 @@
-<h1>Make Changes to <%= @course.name %></h1>
+<h1>Make Changes to <%= @course.course_name %></h1>
 <form method="POST" action="/courses/courses">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <div class="form-group">
     <label for="description">Course *</label>
-    <input type="text" class="form-control" id="name" name="name" value="<%= @course.name %>" required>
+    <input type="text" class="form-control" id="name" name="name" value="<%= @course.course_name %>" required>
   </div>
   <br><br>
     <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">Save Your Changes</button>

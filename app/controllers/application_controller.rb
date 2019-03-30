@@ -37,13 +37,15 @@ class ApplicationController < Sinatra::Base
 			erb :"courses/new" 
 		end 
 
-		get "/courses" do 
-			@courses = Course.all.sort_by{|c| c.name}
+		get "/courses/courses" do 
+			@courses = Course.all.sort_by{|c| c.course_name}
 			erb :"courses/courses"
 		end
 
 		post "/courses/courses" do 
-			course = Course.create(params[:course_name])
+			course_info = { :course_name => params["course_name"]}
+
+			course = Course.create(course_info)
 		
 			redirect to "/courses/courses"
 		end
@@ -51,18 +53,15 @@ class ApplicationController < Sinatra::Base
 		get '/courses/:id/edit' do
 			@user = current_user
 			@course = Course.find(params["id"])
-			if @user.id != @course.user_id
-				flash[:edit_user] = "You can only edit your own courses."
-				redirect to "/courses/#{@course.id}"
-			end
+		
 			erb :"courses/edit_course"
 		end
 
 		patch '/courses/:id' do
-			course = Course.find(params[:id])
+			@course = Course.find(params[:id])
 	
 			details = {
-				:name => params["name"]
+				:course_name => params["course_name"]
 			}
 	
 			is_empty?(details, "courses/#{params[:id]}/edit")
