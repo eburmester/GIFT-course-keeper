@@ -44,14 +44,13 @@ class CourseController < ApplicationController
         course = Course.find(params[:id])
 
         details = {
-            :course_name => params[:course_name],
+            :course_name => params["course_name"],
             :user_id => session[:user_id]
         }
 
         cour = Course.update_course(details, course)
 
-        
-        redirect to "courses/#{cour.id}"
+        redirect to "/courses/courses"
     end
 
     delete '/courses/:id/delete' do

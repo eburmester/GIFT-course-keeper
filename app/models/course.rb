@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
     belongs_to :user
-    has_many :users, through: :user_courses 
+    
 
     def self.create_new_course(course_info, session_uid)
         @course_info = course_info
