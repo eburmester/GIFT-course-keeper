@@ -41,10 +41,10 @@ class CourseController < ApplicationController
     end
 
     patch '/courses/:id' do
-        course = Course.find(params[:id])
+        course = Course.find(params["id"])
 
         details = {
-            :course_name => params["course_name"],
+            :course_name => params[:course_name],
             :user_id => session[:user_id]
         }
 

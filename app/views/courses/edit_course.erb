@@ -2,8 +2,8 @@
 <form method="POST" action="/courses/<%= @course.id %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <div class="form-group">
-    <label for="description">Course *</label>
-    <input type="text" class="form-control" id="name" name="name" value="<%= @course.course_name %>" required>
+    <label for="course_name">Course *</label>
+    <input type="text" class="form-control" id="course_name" name="course_name" value="<%= @course.course_name %>" required>
   </div>
   <br><br>
     <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">Save Your Changes</button>
