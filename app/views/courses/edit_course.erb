@@ -1,5 +1,5 @@
 <h1>Make Changes to <%= @course.course_name %></h1>
-<form method="POST" action="/courses/courses">
+<form method="POST" action="/courses/<%= @course.id %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <div class="form-group">
     <label for="description">Course *</label>

@@ -1,9 +1,10 @@
 <h1>Add a New Course to your GIFT Course List</h1>
-<form method="POST" action="/courses/courses">
+<form method="POST" action="/courses/new">
+  <input name="id" value="<%= @user.id %>" type="hidden">
   <div class="form-group">
-    <label for="course_name">Course Name *</label>
+    <label for="description">Course Name *</label>
     <input type="text" class="form-control" id="course_name" name="course_name" required>
   </div>
-  <br><br>
+    <br><br>
   <button type="submit" class="btn btn-primary" style="margin-bottom: 20px">Add To Your Course List</button>
 </form>
