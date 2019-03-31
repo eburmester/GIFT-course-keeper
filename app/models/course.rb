@@ -19,11 +19,13 @@ class Course < ActiveRecord::Base
       end
 
 
-    def self.update_course(details,course)
+    def self.update_course(details, course)
         @details = details
         @course = course
+
         @course.update(
-          :course_name => @details[:course_name]
+          :course_name => @details[:course_name],
+          :user_id => @details[:user_id]
         )
     
         @course.save
