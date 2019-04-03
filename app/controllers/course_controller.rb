@@ -8,9 +8,7 @@ class CourseController < ApplicationController
 
     get "/courses/new" do 
         @user = current_user
-        # course_info = { :course_name => params["course_name"], :user_id => session[:user_id] }
-
-        # @course = Course.create_new_course(course_info, session[:user_id])
+        
         erb :"courses/new" 
     end 
 
