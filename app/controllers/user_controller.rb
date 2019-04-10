@@ -11,7 +11,6 @@ class UserController < ApplicationController
             :password => params["password"] 
         }
 
-        is_empty?(user_info, 'signup')
 
         new_user = User.create(user_info)
         session[:user_id] = new_user.id
@@ -30,13 +29,14 @@ class UserController < ApplicationController
             :password => params["password"]
         }
 
-        is_empty?(user_info, 'login')
 
         user = User.find_by(:email => user_info[:email])
 
         if user && user.authenticate(user_info[:password])
             session[:user_id] = user.id
             redirect to '/courses/courses'
+        else 
+            redirect to '/login'
         end
     end
 

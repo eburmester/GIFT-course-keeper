@@ -23,14 +23,7 @@ class ApplicationController < Sinatra::Base
 			  User.find(session[:user_id])
 			end
 		
-			def is_empty?(user_hash, route)
-			  user_hash.each do |att, val|
-				if val.empty?
-				  flash[:empty] = "Please complete all fields."
-				  redirect to "/#{route}"
-				end
-			  end
-			end
-		  end
+			
+		end
 
-    end 
+  end 
