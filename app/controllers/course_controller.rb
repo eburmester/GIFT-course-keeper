@@ -33,27 +33,28 @@ class CourseController < ApplicationController
 
     get '/courses/:id/edit' do
         @user = current_user
-        @course = Course.find(params["id"])
+        @course = @user.courses.find(params["id"])
     
         erb :"courses/edit_course"
     end
 
     patch '/courses/:id' do
-        course = Course.find(params["id"])
+        @user = current_user
+        course = @user.courses.find(params["id"])
 
         details = {
             :course_name => params[:course_name],
             :user_id => session[:user_id]
         }
 
-        cour = Course.update_course(details, course)
+        cour = course.update(details)
 
         redirect to "/courses/courses"
     end
 
     delete '/courses/:id/delete' do
         @user = current_user
-        @course = Course.find(params[:id])
+        @course = @user.courses.find(params[:id])
 
         @course.destroy
     
@@ -62,7 +63,7 @@ class CourseController < ApplicationController
 
     get '/courses/:id' do
         @user = current_user
-        @course = Course.find(params["id"])
+        @course = @user.courses.find(params["id"])
         erb :"courses/show"
     end
 

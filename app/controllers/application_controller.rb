@@ -23,7 +23,11 @@ class ApplicationController < Sinatra::Base
 			  User.find(session[:user_id])
 			end
 		
-			
-		end
 
+		end
+		
+		error ActiveRecord::RecordNotFound do
+			redirect '/'
+		end
+		
   end 
